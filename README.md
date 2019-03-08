@@ -8,7 +8,5 @@ Usage: python findmail.py --url=https://www.example.com
 
 Packages to install:
 
-• pip install request
-• pip install bs4
-• pip install argparse
-• pip install regex
+pip install • request, bs4, argparse, regex •
+ 
