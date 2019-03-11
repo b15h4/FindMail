@@ -1,3 +1,4 @@
+#!/bin/python3
 from urllib.request import urlopen
 from urllib.request import Request
 import urllib.error
