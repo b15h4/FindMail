@@ -40,17 +40,20 @@ def scrape_data(url):
 		print(f"[!] HTTP Error [!]\n[?] Error Code: {e.code} [?]")
 
 if __name__ == '__main__':
-	parser = argparse.ArgumentParser()
-	parser.add_argument("--url", help="Usage: python findmail.py --url=https://www.example.com/",type=scrape_data)
-	args = parser.parse_args()
-	#remove duplicates
-	openmail = open("emails.txt", "r").readlines()
-	openmail_set = set(openmail)
-	cleanmail = open("emails.txt", "w")
+	try:
+		parser = argparse.ArgumentParser()
+		parser.add_argument("--url", help="Usage: python findmail.py --url=https://www.example.com/",type=scrape_data)
+		args = parser.parse_args()
+		#remove duplicates
+		openmail = open("emails.txt", "r").readlines()
+		openmail_set = set(openmail)
+		cleanmail = open("emails.txt", "w")
 
-	for line in openmail_set:
-		cleanmail.write(line)
-	if os.path.isfile("emails.txt") == False:
-		print("[!] Emails not Found [!]")
-	else:
-		print("\n[+] Emails Saved on: " + os.getcwd())
+		for line in openmail_set:
+			cleanmail.write(line)
+		if os.path.isfile("emails.txt") == True:
+			print("\n[+] Emails Saved on: " + os.getcwd())
+		else:
+			pass
+	except:
+		pass
